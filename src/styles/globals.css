@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-foreground;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    @apply bg-primary;
+  }
+}
+
+@layer components {
+  .image {
+    -webkit-mask-image: url('/logo-boxer.png');
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    height: 100%;
+  }
+  .text-stroke {
+    font-family: sans-serif;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #fff;
+    -webkit-text-stroke-width: 1px;
+  }
+  .perspective {
+    perspective: 2200px;
+  }
+}
