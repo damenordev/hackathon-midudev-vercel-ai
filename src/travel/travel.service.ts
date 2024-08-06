@@ -13,8 +13,8 @@ class TravelService {
       const { object } = await generateObjectByModel({
         prompt,
         schema: travelRecommendedResponseSchema,
-        modelIA: 'gpt-3.5-turbo',
-        // modelIA: 'llama3-70b-8192',
+        // modelIA: 'gpt-3.5-turbo',
+        modelIA: 'llama3-70b-8192',
         // modelIA: 'gpt-4o',
       })
       return travelRecommendedResponseSchema.parse(object).data
