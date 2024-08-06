@@ -14,7 +14,7 @@ class TravelService {
         prompt,
         schema: travelRecommendedResponseSchema,
         // modelIA: 'gpt-3.5-turbo',
-        modelIA: 'llama3-70b-8192',
+        modelIA: 'llama-3.1-70b-versatile',
         // modelIA: 'gpt-4o',
       })
       return travelRecommendedResponseSchema.parse(object).data
