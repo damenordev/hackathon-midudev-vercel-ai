@@ -14,6 +14,8 @@ class RecommenderService {
     const nextStep = nextStepIndex && this.steps[nextStepIndex]?.slug
     return { currentStep, currentStepIndex, numberOfSteps, prevStep, nextStep }
   }
+
+  getFirstStep = () => this.steps[0]
 }
 
 export const recommenderService = new RecommenderService(STEPS)

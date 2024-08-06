@@ -1,5 +1,5 @@
 'use client'
-import { createContext, RefObject, useContext, useEffect, useRef, useState } from 'react'
+import { createContext, RefObject, useContext, useLayoutEffect, useRef, useState } from 'react'
 
 import { IMapRefHander, ISliderRef } from '@/ui'
 
@@ -23,16 +23,18 @@ export interface IMapWithSliderProps {
   places: IMapWithSliderOption[]
 }
 
+// TODO: Fix flyTo in first render
+
 export const MapWithSliderProvider = ({ children, places }: IMapWithSliderProps) => {
   const [placeSelected, setPlaceSelected] = useState<IMapWithSliderOption>(places[0])
   const mapRef = useRef<IMapRefHander>(null)
 
-  const getCoordinatesConverted = () =>
-    [placeSelected.coordinates.lng, placeSelected.coordinates.lat] as mapboxgl.LngLatLike
+  const getCoordinatesConverted = () => {
+    return [placeSelected.coordinates.lng, placeSelected.coordinates.lat] as mapboxgl.LngLatLike
+  }
 
   const onNext = () => {
     const index = places.indexOf(placeSelected) + 1
-    console.log({ index })
     if (index < places.length) return setPlaceSelected(places[index])
     setPlaceSelected(places[0])
   }
@@ -46,9 +48,9 @@ export const MapWithSliderProvider = ({ children, places }: IMapWithSliderProps)
 
   const setPlaceSelectedByIndex = (index: number) => setPlaceSelected(places[index])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (mapRef.current && mapRef.current.map) mapRef.current.map.flyTo({ zoom: 8, center: getCoordinatesConverted() })
-  }, [mapRef, placeSelected])
+  }, [mapRef, placeSelected]) // eslint-disable-line
 
   const value = {
     mapRef,

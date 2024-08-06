@@ -10,7 +10,6 @@ interface IRecommenderPageParams {
 }
 
 const getComponentByQuestion = (question: TRecommenderQuestion) => {
-  console.log({ question })
   if (question.type === 'radio' || question.type === 'checkbox') return <InputCheckboxOrRadio {...question} />
   if (question.type === 'textarea') return <InputTextArea {...question} />
 }
@@ -18,8 +17,6 @@ const getComponentByQuestion = (question: TRecommenderQuestion) => {
 export default async function RecommenderPage({ params: { slug } }: any) {
   const { currentStep, nextStep } = recommenderService.getStepDataBySlug(slug)
   const initialFormData = await getRecommenderFormDataStore()
-
-  console.log({ initialFormData })
 
   if (!currentStep) return redirect('/')
 

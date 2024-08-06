@@ -14,7 +14,7 @@ export const MapWithSlider: React.FC<IMapWithSliderProps> = ({ places }) => {
     <MapWithSliderProvider places={places}>
       <section className="relative w-full h-full bg-black snap-start flex flex-col md:flex-col-reverse justify-between">
         <MapWithSliderCartography mapAccessToken={MAPBOX_ACCESS_TOKEN} />
-        <div className="p-2">
+        <div className="p-4">
           <MapWithSliderPlaceInfo />
         </div>
       </section>

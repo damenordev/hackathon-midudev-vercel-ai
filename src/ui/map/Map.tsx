@@ -51,7 +51,7 @@ export const Map = forwardRef(({ accessToken, markers }: IMapProps, ref) => {
 
     mapRef.current = map
 
-    markers?.forEach(marker => new Marker({ color: marker.color || '#34d399' }).setLngLat(marker.lngLat).addTo(map))
+    markers?.forEach(marker => new Marker({ color: marker.color || '#a78bfa' }).setLngLat(marker.lngLat).addTo(map))
 
     const onResize = () => {
       map.setZoom(getZoom())
@@ -63,7 +63,7 @@ export const Map = forwardRef(({ accessToken, markers }: IMapProps, ref) => {
       window.removeEventListener('resize', onResize)
       map.remove()
     }
-  }, [])
+  }, []) // eslint-disable-line
 
   return <div ref={mapboxRef} className="block h-dvh w-screen bg-black" />
 })
