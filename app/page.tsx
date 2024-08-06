@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation'
+
 export default async function HomePage() {
-  return <main className="relative"></main>
+  return redirect('/recommender/basic-information')
 }

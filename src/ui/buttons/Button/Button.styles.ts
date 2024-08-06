@@ -2,7 +2,8 @@ import { classVariance } from '@/styles'
 
 export const colorScheme = {
   primary: 'bg-primary-400/20 text-primary-400 border-primary-400 hover:bg-primary-400 hover:text-primary-950',
-  secondary: 'bg-secondary-400/20 text-secondary-400 border-secondary-400 hover:bg-secondary-400 hover:text-secondary-950',
+  secondary:
+    'bg-secondary-400/20 text-secondary-400 border-secondary-400 hover:bg-secondary-400 hover:text-secondary-950',
   info: 'bg-info-400/20 text-info-400 border-info-400 hover:bg-info-400 hover:text-info-950',
   danger: 'bg-danger-400/20 text-danger-400 border-danger-400 hover:bg-danger-400 hover:text-danger-950',
   success: 'bg-success-400/20 text-success-400 border-success-400/80 hover:bg-success-400 hover:text-success-950',

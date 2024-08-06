@@ -1,5 +1,3 @@
-export * from './InputDate'
-export * from './InputLabelWithHelperText'
-export * from './InputRadio'
-export * from './InputRadioWithEmoji'
+export * from './InputCheckboxOrRadio'
 export * from './InputText'
+export * from './InputTextArea'

@@ -18,8 +18,8 @@ const config: Config = {
           ['popover-border']: utils.colors.zinc[900],
           muted: utils.colors.zinc[400],
           primary: {
-            DEFAULT: utils.colors.lime[500],
-            ...utils.colors.lime,
+            DEFAULT: utils.colors.emerald[400],
+            ...utils.colors.emerald,
           },
           secondary: {
             DEFAULT: utils.colors.violet[500],
@@ -48,11 +48,11 @@ const config: Config = {
       container: {
         center: true,
         padding: {
-          DEFAULT: '1rem',
-          sm: '2rem',
-          lg: '4rem',
-          xl: '5rem',
-          '2xl': '6rem',
+          DEFAULT: '0rem',
+          sm: '0rem',
+          lg: '0rem',
+          xl: '0rem',
+          '2xl': '0rem',
         },
       },
       keyframes: {

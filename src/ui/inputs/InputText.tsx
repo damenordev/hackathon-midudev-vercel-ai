@@ -1,19 +1,23 @@
 import { ComponentProps } from 'react'
 
-import { cn } from '@/styles'
-import { InputLabelWithHelperText, IInputLabelWithHelperTextProps } from './InputLabelWithHelperText'
+import { IInputBaseProps, InputWrapper } from './InputWrapper'
 
-export interface IInputTextProps extends ComponentProps<'input'>, IInputLabelWithHelperTextProps {}
+export interface IInputTextProps extends Omit<ComponentProps<'input'>, 'name'>, IInputBaseProps {}
 
-export const InputText: React.FC<IInputTextProps> = ({ className, label, helperText, errorText, ...inputProps }) => {
+export const InputText: React.FC<IInputTextProps> = ({ className, label, helperText, errorMessage, ...inputProps }) => {
   return (
-    <label className={cn('space-y-2', className)}>
-      <InputLabelWithHelperText label={label} helperText={helperText} errorText={errorText} />
+    <InputWrapper
+      key={label}
+      label={label}
+      name={inputProps.name!}
+      // errorMessage={errorMessage}
+      helperText={helperText}
+    >
       <input
         {...inputProps}
         type="text"
-        className="w-full py-3 px-3 border-2 border-border rounded-lg bg-transparent text-sm"
+        className="w-full py-2 px-3 border-2 border-border rounded-lg bg-transparent text-xs"
       />
-    </label>
+    </InputWrapper>
   )
 }
