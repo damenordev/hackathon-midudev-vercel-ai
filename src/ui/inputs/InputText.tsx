@@ -2,7 +2,7 @@ import { ComponentProps } from 'react'
 
 import { IInputBaseProps, InputWrapper } from './InputWrapper'
 
-export interface IInputTextProps extends Omit<ComponentProps<'input'>, 'name'>, IInputBaseProps {}
+export interface IInputTextProps extends Omit<ComponentProps<'input'>, 'name' | 'defaultValue'>, IInputBaseProps {}
 
 export const InputText: React.FC<IInputTextProps> = ({ className, label, helperText, errorMessage, ...inputProps }) => {
   return (
