@@ -15,7 +15,7 @@ const getComponentByQuestion = (question: TRecommenderQuestion) => {
   if (question.type === 'textarea') return <InputTextArea {...question} />
 }
 
-export default async function RecommenderPage({ params: { slug } }: ILayout<IRecommenderPageParams>) {
+export default async function RecommenderPage({ params: { slug } }: any) {
   const { currentStep, nextStep } = recommenderService.getStepDataBySlug(slug)
   const initialFormData = await getRecommenderFormDataStore()
 
