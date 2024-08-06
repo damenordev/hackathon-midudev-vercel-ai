@@ -10,13 +10,7 @@ class TravelService {
   getRecommendations = async (args: ITravelRecomendationsArgs): Promise<ITravelRecommended[] | null> => {
     try {
       const prompt = createPromptRecommendations(args)
-      const { object } = await generateObjectByModel({
-        prompt,
-        schema: travelRecommendedResponseSchema,
-        // modelIA: 'gpt-3.5-turbo',
-        modelIA: 'llama-3.1-70b-versatile',
-        // modelIA: 'gpt-4o',
-      })
+      const { object } = await generateObjectByModel({ prompt, schema: travelRecommendedResponseSchema })
       return travelRecommendedResponseSchema.parse(object).data
     } catch (error) {
       console.log(error)

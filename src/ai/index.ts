@@ -7,7 +7,12 @@ const aiGroq = createOpenAI({
   apiKey: process.env.GROQ_API_KEY,
 })
 
-export type TGenerateObjectModelIA = 'llama3-70b-8192' | 'gpt-4o' | 'gpt-3.5-turbo'
+export type TGenerateObjectModelIA =
+  | 'llama3-70b-8192'
+  | 'gpt-4o'
+  | 'gpt-3.5-turbo'
+  | 'llama-3.1-70b-versatile'
+  | 'llama-3.1-8b-instant'
 
 export interface IGenerateObjectByModelArgs {
   modelIA?: TGenerateObjectModelIA
@@ -18,12 +23,14 @@ export interface IGenerateObjectByModelArgs {
 const getModel = (modelIA: TGenerateObjectModelIA) => {
   if (modelIA === 'gpt-3.5-turbo') return openai('gpt-3.5-turbo')
   if (modelIA === 'gpt-4o') return openai('gpt-4o')
-  return aiGroq('llama3-70b-8192')
+  if (modelIA === 'llama3-70b-8192') return aiGroq('llama3-70b-8192')
+  if (modelIA === 'llama-3.1-8b-instant') return aiGroq('llama-3.1-8b-instant')
+  return aiGroq('llama-3.1-70b-versatile')
 }
 
 export const generateObjectByModel = async ({
   schema,
-  modelIA = 'llama3-70b-8192',
+  modelIA = 'llama-3.1-70b-versatile',
   prompt,
 }: IGenerateObjectByModelArgs) => {
   const model = getModel(modelIA)
