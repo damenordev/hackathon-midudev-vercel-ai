@@ -6,6 +6,7 @@ import { APP_NAME } from '@/constants'
 import { Button } from '@/ui'
 
 import { useMapWithSliderContext } from './MapWithSliderProvider'
+import { IconAppLink } from '@/components'
 
 const getFormattedDateTime = (utcString: string): { date: string; time: string } => {
   // Extraer el desplazamiento numérico de la cadena UTC
@@ -58,10 +59,7 @@ export const MapWithSliderPlaceInfo: React.FC<IMapWithSliderPlaceInfoProps> = ()
     <div className="w-full flex-2 md:flex-1 max-w-md grid gap-1 text-left fade-up px-4 md:pl-3 py-4 md:pr-6 select-none md:backdrop-blur-xl md:bg-black/35 md:rounded-lg md:border md:border-primary/10 md:overflow-hidden">
       <div className="hidden sm:block absolute w-8 bg-primary/20 left-0 h-full"></div>
       <div className="flex items-center justify-between mb-4">
-        <Link className="flex items-center gap-1 " href="/recomender/basic-information">
-          <IconApp size={28} />
-          <h1 className="font-bold text-[10px] w-16 leading-3">{APP_NAME}</h1>
-        </Link>
+        <IconAppLink />
         <div className="flex flex-col items-end">
           <span className="text-sm">{getFormattedDateTime(placeSelected.timeZone).time}</span>
           <span className="text-xs">{getFormattedDateTime(placeSelected.timeZone).date}</span>

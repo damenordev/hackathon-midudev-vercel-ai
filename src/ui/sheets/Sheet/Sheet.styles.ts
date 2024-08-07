@@ -1,7 +1,7 @@
 import { VariantProps, cva } from 'class-variance-authority'
 
 export const sheetBackdropClassName = cva(
-  'fixed top-0 left-0 z-40 w-screen h-screen backdrop-blur-md bg-[rgba(0,0,0,0.15)]',
+  'fixed top-0 left-0 z-50 w-screen h-screen backdrop-blur-md bg-[rgba(0,0,0,0.15)]',
   {
     variants: {
       isOpen: { true: 'flex', false: 'hidden' },

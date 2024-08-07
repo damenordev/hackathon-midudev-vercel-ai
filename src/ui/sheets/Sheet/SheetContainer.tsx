@@ -13,7 +13,7 @@ export const SheetContainer = forwardRef(({ children, className, mode }: any, re
     close: () => setIsOpen(false),
   }))
 
-  if (!isOpen) return null
+  // if (!isOpen) return null
 
   return (
     <div className={sheetContainerClassName({ className, isOpen, mode })} ref={ref}>
