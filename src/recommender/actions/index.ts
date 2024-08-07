@@ -9,7 +9,7 @@ export const setRecommenderFormDataStore = async (formData: FormData) => {
   const stepData: Record<string, any> = {}
 
   formData.forEach((value, key) => {
-    if (key.startsWith('$ACTION') || !value || value === '') return
+    if (key.startsWith('$ACTION') || !value) return
     if (!stepData[key]) return (stepData[key] = value)
     if (Array.isArray(stepData[key])) return stepData[key].push(value)
     stepData[key] = [stepData[key], value]

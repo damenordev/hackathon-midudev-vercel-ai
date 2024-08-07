@@ -1,4 +1,4 @@
-import { IInputCheckboxOrRadioProps, IInputTextAreaProps } from '@/ui'
+import { IInputCheckboxOrRadioProps, IInputTextAreaProps, IInputTextProps } from '@/ui'
 
 export interface IRecommenderStep {
   slug: string
@@ -8,4 +8,4 @@ export interface IRecommenderStep {
   questions: TRecommenderQuestion[]
 }
 
-export type TRecommenderQuestion = IInputCheckboxOrRadioProps | IInputTextAreaProps
+export type TRecommenderQuestion = IInputCheckboxOrRadioProps | IInputTextAreaProps | IInputTextProps

@@ -2,7 +2,15 @@ import { redirect } from 'next/navigation'
 
 import { recommenderService, TRecommenderQuestion } from '@/recommender'
 import { ILayout } from '@/types'
-import { Button, InputCheckboxOrRadio, InputText, InputTextArea } from '@/ui'
+import {
+  Button,
+  IInputCheckboxOrRadioProps,
+  IInputTextAreaProps,
+  IInputTextProps,
+  InputCheckboxOrRadio,
+  InputText,
+  InputTextArea,
+} from '@/ui'
 import { getRecommenderFormDataStore, setRecommenderFormDataStore } from '@/recommender/actions'
 
 interface IRecommenderPageParams {
@@ -10,8 +18,10 @@ interface IRecommenderPageParams {
 }
 
 const getComponentByQuestion = (question: TRecommenderQuestion) => {
-  if (question.type === 'radio' || question.type === 'checkbox') return <InputCheckboxOrRadio {...question} />
-  if (question.type === 'textarea') return <InputTextArea {...question} />
+  if (question.type === 'radio' || question.type === 'checkbox')
+    return <InputCheckboxOrRadio {...(question as IInputCheckboxOrRadioProps)} />
+  if (question.type === 'text') return <InputText {...(question as IInputTextProps)} />
+  if (question.type === 'textarea') return <InputTextArea {...(question as IInputTextAreaProps)} />
 }
 
 export default async function RecommenderPage({ params: { slug } }: any) {

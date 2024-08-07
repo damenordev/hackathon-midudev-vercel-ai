@@ -38,6 +38,13 @@ export const STEP_FINAL_DETAILS: IRecommenderStep = {
       ],
     },
     {
+      label: '¿Desde que país viajar?',
+      helperText: 'Dinos tu país de residencia',
+      errorMessage: 'Por favor, tu pais de residencia',
+      name: 'country',
+      type: 'text',
+    },
+    {
       label: '¿Deseas indicarnos algunas recomendaciones adicionales?',
       helperText: 'Opcionalmente puedes indicar algunas recomendaciones adicionales',
       name: 'additionalRecommendations',

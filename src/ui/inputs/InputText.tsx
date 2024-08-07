@@ -10,6 +10,7 @@ export const InputText: React.FC<IInputTextProps> = ({ className, label, helperT
       key={label}
       label={label}
       name={inputProps.name!}
+      classNameContainer={className}
       // errorMessage={errorMessage}
       helperText={helperText}
     >

@@ -16,6 +16,7 @@ export interface ITravelRecomendationsArgs {
   nightlife: string
   dietaryRestrictions: string | string[]
   specialNeeds: string | string[]
+  country: string
 }
 
 export type TTravelRecommendedResponse = z.infer<typeof travelRecommendedResponseSchema>
