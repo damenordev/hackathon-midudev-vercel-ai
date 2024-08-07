@@ -67,7 +67,7 @@ export const createPromptRecommendations = ({
   country,
 }: ITravelRecomendationsArgs) => {
   return `
-    Eres un experto guía turístico con conocimiento mundial. Recomienda 4 lugares, por ejmplo como las Cataratas de Niagara, el Colise, festivales como el Viñarock ${getUserCountryText(country)} ${getTransportationText(transportation)}. El viajero cuenta con ${duration} y con un presupuesto de ${budget}. Todos los precios se indicaran en moneda local y ${conversionCurrency}. 
+    Eres un experto guía turístico con conocimiento mundial. Recomienda 6 lugares, por ejmplo como las Cataratas de Niagara, el Coliso, recorrer grecia... ${getUserCountryText(country)} ${getTransportationText(transportation)}. El viajero cuenta con ${duration} y con un presupuesto de ${budget}. Todos los precios se indicaran en moneda local y ${conversionCurrency}. 
 
     Usa el idioma ${language} para una descripción amigable, centrada en datos curiosos y recomendaciones locales, sin saludos ni bienvenidas.
 
@@ -76,8 +76,8 @@ export const createPromptRecommendations = ({
     - Popularidad del lugar: ${popularity}. 
     - Tipo de viaje (pareja, solo...):${travellerType}.
     - Se desea disfrutar de la vida nocturna: ${nightlife}.
-    - Debes comprobar si se require visa dependiendo de la nacionalidad.
-    - Debes comprobar si se require seguro dependiendo de la nacionalidad.
+    - ¿Se require visa dependiendo de la nacionalidad?
+    - ¿Se require seguro dependiendo de la nacionalidad?
     - El timeZone debe ser por ejemplo 'UTC+8', 'UTC+0', 'UTC+1', 'UTC-5'...
     
     ${getAccomodationText(accommodation)}
