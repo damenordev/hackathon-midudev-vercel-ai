@@ -12,13 +12,12 @@ export const HourCounter: React.FC<IHourCounterProps> = ({ utc }) => {
 
   useEffect(() => {
     const updateTime = () => {
-      const date = getDateAdjustedByUTC(utc)
-      setCurrentTime(getTimeFormated(date.toString()))
+      setCurrentTime(getTimeFormated(utc))
     }
     updateTime()
     const intervalId = setInterval(updateTime, 1000)
     return () => clearInterval(intervalId)
   }, [utc])
 
-  return <div>{currentTime}</div>
+  return <div className="text-xl">{currentTime}</div>
 }

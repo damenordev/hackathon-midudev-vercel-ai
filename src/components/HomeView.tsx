@@ -144,7 +144,7 @@ export const HomeView: React.FC<IHomeViewProps> = props => {
               <div
                 key={index}
                 className="w-[560px] aspect-video bg-card rounded-lg bg-center bg-cover grayscale hover:grayscale-0"
-                style={{ backgroundImage: `url(/images/slider-${index + 1}.jpg)` }}
+                style={{ backgroundImage: `url(/images/slider-${index + 1}.webp)` }}
               ></div>
             ))}
           </Slider>

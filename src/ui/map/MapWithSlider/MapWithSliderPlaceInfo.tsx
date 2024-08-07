@@ -18,14 +18,14 @@ export const MapWithSliderPlaceInfo: React.FC<IMapWithSliderPlaceInfoProps> = ()
       <div className="flex items-center justify-between mb-4">
         <IconAppLink />
         <div className="flex flex-col items-end">
+          <span className="text-xs text-muted">{getDateFormated(placeSelected.timeZone)}</span>
           <HourCounter utc={placeSelected.timeZone} />
-          <span className="text-xs">{getDateFormated(placeSelected.timeZone)}</span>
         </div>
       </div>
       <div>
         <small className="tracking-widest text-md text-primary uppercase">{placeSelected.country}</small>
         <h2 className="text-xl font-bold tracking-wide drop-shadow-text-lg">
-          {placeSelected.name} ({placeSelected.city})
+          {placeSelected.name} {placeSelected.name !== placeSelected.city ? `(${placeSelected.city})` : ''}
         </h2>
       </div>
       <div className="hidden pb-6 md:pb-2 md:pl-10 md:mt-4 space-y-2 md:space-y-6 md:flex md:flex-col h-full md:h-auto">

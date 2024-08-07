@@ -9,6 +9,8 @@ import { DEV_DATA } from '@/data'
 
 class TravelService {
   getRecommendations = async (args: ITravelRecomendationsArgs): Promise<ITravelRecommended[] | null> => {
+
+    return DEV_DATA.recommendations
     try {
       const prompt = createPromptRecommendations(args)
       const { object } = await generateObjectByModel({ prompt, schema: travelRecommendedResponseSchema })

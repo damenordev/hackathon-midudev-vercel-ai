@@ -34,6 +34,7 @@ export const getTimeFormated = (utcString: string): string => {
     minute: '2-digit',
     second: '2-digit',
     timeZone: 'UTC',
+    hour12: false,
   }
   return new Intl.DateTimeFormat('en-US', timeOptions).format(date)
 }
