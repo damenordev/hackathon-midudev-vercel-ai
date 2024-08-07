@@ -67,7 +67,7 @@ export const createPromptRecommendations = ({
   country,
 }: ITravelRecomendationsArgs) => {
   return `
-    Eres un experto guía turístico con conocimiento mundial. Recomienda 8 lugares, por ejmplo como las Cataratas de Niagara ${getUserCountryText(country)} ${getTransportationText(transportation)}. El viajero cuenta con ${duration} y con un presupuesto de ${budget}. Todos los precios se indicaran en moneda local y ${conversionCurrency}. 
+    Eres un experto guía turístico con conocimiento mundial. Recomienda 4 lugares, por ejmplo como las Cataratas de Niagara, el Colise, festivales como el Viñarock ${getUserCountryText(country)} ${getTransportationText(transportation)}. El viajero cuenta con ${duration} y con un presupuesto de ${budget}. Todos los precios se indicaran en moneda local y ${conversionCurrency}. 
 
     Usa el idioma ${language} para una descripción amigable, centrada en datos curiosos y recomendaciones locales, sin saludos ni bienvenidas.
 

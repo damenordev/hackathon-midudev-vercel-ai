@@ -30,7 +30,7 @@ const getModel = (modelIA: TGenerateObjectModelIA) => {
 
 export const generateObjectByModel = async ({
   schema,
-  modelIA = 'gpt-4o',
+  modelIA = 'llama-3.1-70b-versatile',
   prompt,
 }: IGenerateObjectByModelArgs) => {
   const model = getModel(modelIA)

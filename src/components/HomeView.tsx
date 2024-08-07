@@ -10,6 +10,8 @@ import { cn, fontInter } from '@/styles'
 
 export interface IHomeViewProps {}
 
+gsap.registerPlugin(ScrollTrigger)
+
 export const HomeView: React.FC<IHomeViewProps> = props => {
   const bg1Ref = useRef(null)
   const imgRef = useRef(null)
@@ -21,8 +23,6 @@ export const HomeView: React.FC<IHomeViewProps> = props => {
   const textCarouselRef = useRef(null)
 
   useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: bg1Ref.current,
