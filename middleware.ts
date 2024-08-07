@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const WHITE_LIST = ['/travel/recommended', '/recommender']
+const WHITE_LIST = ['/', '/travel/recommended', '/recommender']
 
 const isInWhiteList = (url: string) => {
   return WHITE_LIST.some(whitelistUrl => {

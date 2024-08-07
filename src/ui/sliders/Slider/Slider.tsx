@@ -10,6 +10,7 @@ export interface ISliderProps {
   className?: string
   classNameSlider?: string
   children: React.ReactNode[]
+  addBlurHorizontalScroll?: boolean
   showDots?: boolean
   onChangeIndex?: (index: number) => void
 }
@@ -21,7 +22,7 @@ export interface ISliderRef {
 }
 
 export const Slider = forwardRef<ISliderRef, ISliderProps>(
-  ({ children, className, classNameSlider, onChangeIndex, showDots = true }, ref) => {
+  ({ children, className, classNameSlider, onChangeIndex, showDots, addBlurHorizontalScroll }, ref) => {
     const [activeIndex, setActiveIndex] = useState(0)
     const childRefs = useRef<(HTMLDivElement | null)[]>([])
     const { ref: sliderRef, isMouseDownRef, ...draggableProps } = useSliderDraggableScroll()
@@ -67,7 +68,7 @@ export const Slider = forwardRef<ISliderRef, ISliderProps>(
     useImperativeHandle(ref, () => ({ goPrev, goNext, goTo }), [goPrev, goNext, goTo])
 
     return (
-      <div className={cn('relative pb-8 select-none', className)}>
+      <div className={cn('relative select-none', className)}>
         <div ref={sliderRef} className={cn('flex overflow-x-auto scrollbar-hide', classNameSlider)} {...draggableProps}>
           {Children.map(children, (child, index) => (
             <div
@@ -80,6 +81,12 @@ export const Slider = forwardRef<ISliderRef, ISliderProps>(
           ))}
         </div>
         {showDots && <SliderDots activeIndex={activeIndex} numberOfSlides={Children.count(children)} onClick={goTo} />}
+        {addBlurHorizontalScroll && (
+          <>
+            <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-background to-transparent"></div>
+            <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-background to-transparent"></div>
+          </>
+        )}
       </div>
     )
   }

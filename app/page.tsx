@@ -1,6 +1,5 @@
-import { redirect } from 'next/navigation'
+import { HomeView } from '@/components'
 
 export default async function HomePage() {
-  // return redirect('/recommender/basic-information')
-  return <h1>homepage</h1>
+  return <HomeView />
 }

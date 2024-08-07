@@ -19,7 +19,7 @@
 
 @layer components {
   .image {
-    -webkit-mask-image: url('/logo-boxer.png');
+    -webkit-mask-image: url('/images/home-mask.png');
     -webkit-mask-position: center;
     -webkit-mask-repeat: no-repeat;
     height: 100%;
@@ -31,6 +31,7 @@
     -webkit-text-stroke-width: 1px;
   }
   .perspective {
-    perspective: 2200px;
+    perspective: 100dvh;
+    perspective: 100vh;
   }
 }
