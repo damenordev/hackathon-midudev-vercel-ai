@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "travel/recommended": {
+      "maxDuration": 60
+    }
+  }
+}
