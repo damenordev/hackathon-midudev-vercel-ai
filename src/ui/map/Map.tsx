@@ -7,6 +7,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 export interface IMapProps {
   accessToken: string
   markers?: { lngLat: LngLatLike; color?: string }[]
+  flyToInitialLatLng?: LngLatLike
 }
 
 export interface IMapRefHander {
@@ -14,7 +15,7 @@ export interface IMapRefHander {
   goToDefaultZoom: (center: LngLatLike) => void
 }
 
-export const Map = forwardRef(({ accessToken, markers }: IMapProps, ref) => {
+export const Map = forwardRef(({ accessToken, markers, flyToInitialLatLng }: IMapProps, ref) => {
   const mapboxRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<MapboxMap | null>(null)
 
@@ -56,6 +57,8 @@ export const Map = forwardRef(({ accessToken, markers }: IMapProps, ref) => {
     const onResize = () => {
       map.setZoom(getZoom())
     }
+
+    if (flyToInitialLatLng) mapRef.current.flyTo({ center: flyToInitialLatLng, zoom: 5 })
 
     window.addEventListener('resize', onResize)
 

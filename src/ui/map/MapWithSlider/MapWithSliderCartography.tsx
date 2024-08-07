@@ -8,7 +8,7 @@ export interface IMapWithSliderCartographyProps {
 }
 
 export const MapWithSliderCartography: React.FC<IMapWithSliderCartographyProps> = ({ mapAccessToken }) => {
-  const { mapRef, places } = useMapWithSliderContext()
+  const { mapRef, places, placeSelected } = useMapWithSliderContext()
 
   return (
     <div className="block absolute left-0 top-0 w-full h-full">
@@ -16,6 +16,7 @@ export const MapWithSliderCartography: React.FC<IMapWithSliderCartographyProps> 
         accessToken={mapAccessToken}
         ref={mapRef}
         markers={places.map(place => ({ lngLat: [place.coordinates.lng, place.coordinates.lat] }))}
+        flyToInitialLatLng={[placeSelected.coordinates.lng, placeSelected.coordinates.lat]}
       />
     </div>
   )

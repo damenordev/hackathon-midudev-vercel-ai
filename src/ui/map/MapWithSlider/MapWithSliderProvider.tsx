@@ -1,5 +1,5 @@
 'use client'
-import { createContext, RefObject, useContext, useLayoutEffect, useRef, useState } from 'react'
+import { createContext, RefObject, useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 import { IMapRefHander, ISliderRef } from '@/ui'
 
@@ -21,12 +21,13 @@ const MapWithSliderContext = createContext({} as IMapWithSliderContext)
 export interface IMapWithSliderProps {
   children: React.ReactNode
   places: IMapWithSliderOption[]
+  initialPlaceSelectedIndex?: number
 }
 
 // TODO: Fix flyTo in first render
 
-export const MapWithSliderProvider = ({ children, places }: IMapWithSliderProps) => {
-  const [placeSelected, setPlaceSelected] = useState<IMapWithSliderOption>(places[0])
+export const MapWithSliderProvider = ({ children, places, initialPlaceSelectedIndex = 0 }: IMapWithSliderProps) => {
+  const [placeSelected, setPlaceSelected] = useState<IMapWithSliderOption>(places[initialPlaceSelectedIndex])
   const mapRef = useRef<IMapRefHander>(null)
 
   const getCoordinatesConverted = () => {

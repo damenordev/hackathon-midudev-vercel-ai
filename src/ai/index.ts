@@ -1,3 +1,4 @@
+import { getTimeFormated } from '@/utils'
 import { createOpenAI, openai } from '@ai-sdk/openai'
 import { generateObject } from 'ai'
 import { ZodType, ZodTypeDef } from 'zod'
@@ -34,5 +35,6 @@ export const generateObjectByModel = async ({
   prompt,
 }: IGenerateObjectByModelArgs) => {
   const model = getModel(modelIA)
-  return await generateObject({ model, prompt, schema, mode: 'json' })
+  const response = await generateObject({ model, prompt, schema, mode: 'json' })
+  return response
 }

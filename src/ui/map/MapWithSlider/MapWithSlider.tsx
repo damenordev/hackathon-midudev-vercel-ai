@@ -11,7 +11,7 @@ export interface IMapWithSliderProps {
 
 export const MapWithSlider: React.FC<IMapWithSliderProps> = ({ places }) => {
   return (
-    <MapWithSliderProvider places={places}>
+    <MapWithSliderProvider places={places} initialPlaceSelectedIndex={Math.floor(Math.random() * places.length)}>
       <section className="relative w-full h-full bg-black snap-start flex flex-col md:flex-col-reverse justify-between">
         <MapWithSliderCartography mapAccessToken={MAPBOX_ACCESS_TOKEN} />
         <div className="p-4">

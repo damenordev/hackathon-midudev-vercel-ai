@@ -5,6 +5,7 @@ import { generateObjectByModel } from '@/ai'
 import { createPromptRecommendations } from './travel.prompts'
 import { travelRecommendedResponseSchema } from './travel.schemas'
 import { ITravelRecomendationsArgs, ITravelRecommended } from './travel.types'
+import { DEV_DATA } from '@/data'
 
 class TravelService {
   getRecommendations = async (args: ITravelRecomendationsArgs): Promise<ITravelRecommended[] | null> => {
@@ -17,7 +18,8 @@ class TravelService {
       const errorParsed = error as APICallError
       const responseBody = JSON.stringify(errorParsed.responseBody)
       console.error({ responseBody })
-      throw new Error(JSON.stringify(errorParsed))
+      // throw new Error(JSON.stringify(errorParsed))
+      return DEV_DATA.recommendations
     }
   }
 }

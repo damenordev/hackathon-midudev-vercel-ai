@@ -1,0 +1,112 @@
+export const DEV_DATA = {
+  recommendations: [
+    {
+      name: 'Cataratas de Iguazú',
+      city: 'Puerto Iguazú',
+      country: 'Argentina',
+      continent: 'Sudamérica',
+      coordinates: { lat: -25.6953, lng: -54.4367 },
+      wikipediaUrl: 'https://es.wikipedia.org/wiki/Cataratas_del_Iguaz%C3%BA',
+      description:
+        "Las Cataratas de Iguazú son un sistema de cascadas en la frontera entre Argentina y Brasil. Es uno de los lugares más impresionantes del mundo, con más de 275 cascadas que se extienden a lo largo de 2,7 kilómetros. El nombre 'Iguazú' proviene del idioma guaraní y significa 'gran agua'.",
+      priceForDay: {
+        base: { currency: 'EUR', amount: 12 },
+        converted: { currency: 'EUR', amount: 12 },
+      },
+      daysRecommended: 3,
+      visaRequired: true,
+      insuranceRequired: true,
+      timeZone: 'UTC-3',
+    },
+    {
+      name: 'Coliseo Romano',
+      city: 'Roma',
+      country: 'Italia',
+      continent: 'Europa',
+      coordinates: { lat: 41.8902, lng: 12.4922 },
+      wikipediaUrl: 'https://es.wikipedia.org/wiki/Coliseo_Romano',
+      description:
+        'El Coliseo Romano es un anfiteatro en el centro de Roma, Italia. Es uno de los monumentos más emblemáticos de la ciudad y uno de los más visitados del mundo. Fue construido en el siglo I d.C. y podía albergar hasta 50.000 espectadores.',
+      priceForDay: {
+        base: { currency: 'EUR', amount: 20 },
+        converted: { currency: 'EUR', amount: 20 },
+      },
+      daysRecommended: 2,
+      visaRequired: false,
+      insuranceRequired: false,
+      timeZone: 'UTC+1',
+    },
+    {
+      name: 'Grecia',
+      city: 'Atenas',
+      country: 'Grecia',
+      continent: 'Europa',
+      coordinates: { lat: 37.9838, lng: 23.7275 },
+      wikipediaUrl: 'https://es.wikipedia.org/wiki/Grecia',
+      description:
+        'Grecia es un país ubicado en el sureste de Europa. Es conocido por su rica historia, su arquitectura clásica y sus hermosas islas. La ciudad de Atenas es la capital y es famosa por su Acrópolis, un complejo de edificios antiguos que incluye el Partenón.',
+      priceForDay: {
+        base: { currency: 'EUR', amount: 18 },
+        converted: { currency: 'EUR', amount: 18 },
+      },
+      daysRecommended: 5,
+      visaRequired: false,
+      insuranceRequired: false,
+      timeZone: 'UTC+2',
+    },
+    {
+      name: 'Machu Picchu',
+      city: 'Cuzco',
+      country: 'Perú',
+      continent: 'Sudamérica',
+      coordinates: { lat: -13.1631, lng: -72.545 },
+      wikipediaUrl: 'https://es.wikipedia.org/wiki/Machu_Picchu',
+      description:
+        'Machu Picchu es una ciudad inca ubicada en los Andes peruanos. Es uno de los lugares más famosos y misteriosos del mundo. Fue construida en el siglo XV y abandonada antes de la llegada de los españoles.',
+      priceForDay: {
+        base: { currency: 'EUR', amount: 25 },
+        converted: { currency: 'EUR', amount: 25 },
+      },
+      daysRecommended: 3,
+      visaRequired: true,
+      insuranceRequired: true,
+      timeZone: 'UTC-5',
+    },
+    {
+      name: 'Gran Muralla China',
+      city: 'Pekín',
+      country: 'China',
+      continent: 'Asia',
+      coordinates: { lat: 40.4319, lng: 116.5704 },
+      wikipediaUrl: 'https://es.wikipedia.org/wiki/Gran_Muralla_China',
+      description:
+        'La Gran Muralla China es una serie de fortificaciones construidas a lo largo de la historia china para proteger el país de las invasiones. Es uno de los monumentos más famosos y largos del mundo, con más de 13.000 millas de longitud.',
+      priceForDay: {
+        base: { currency: 'EUR', amount: 30 },
+        converted: { currency: 'EUR', amount: 30 },
+      },
+      daysRecommended: 2,
+      visaRequired: true,
+      insuranceRequired: true,
+      timeZone: 'UTC+8',
+    },
+    {
+      name: 'Taj Mahal',
+      city: 'Agra',
+      country: 'India',
+      continent: 'Asia',
+      coordinates: { lat: 27.1751, lng: 78.0421 },
+      wikipediaUrl: 'https://es.wikipedia.org/wiki/Taj_Mahal',
+      description:
+        'El Taj Mahal es un mausoleo ubicado en la ciudad de Agra, India. Fue construido en el siglo XVII por el emperador mogol Shah Jahan en memoria de su esposa. Es uno de los monumentos más famosos y bellos del mundo.',
+      priceForDay: {
+        base: { currency: 'EUR', amount: 22 },
+        converted: { currency: 'EUR', amount: 22 },
+      },
+      daysRecommended: 2,
+      visaRequired: true,
+      insuranceRequired: true,
+      timeZone: 'UTC+5:30',
+    },
+  ],
+}
