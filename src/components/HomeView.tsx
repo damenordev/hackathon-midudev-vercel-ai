@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import Link from 'next/link'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -14,15 +14,13 @@ export const HomeView: React.FC<IHomeViewProps> = props => {
   const bg1Ref = useRef(null)
   const imgRef = useRef(null)
   const titleRef = useRef(null)
-  const subTitleRef = useRef(null)
   const imgContainerRef = useRef<HTMLDivElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
 
   const imageRef = useRef(null)
   const textRef = useRef(null)
   const textCarouselRef = useRef(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
     const ctx = gsap.context(() => {
